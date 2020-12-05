@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "cypress:run": "npx cypress run",
+    "cypress:open": "npx cypress open",
     "watch:css": "npx postcss ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
     "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
     "dev": "yarn watch:css && NODE_OPTIONS='--inspect' next dev",
@@ -31,6 +33,7 @@
     "@storybook/react": "^6.1.10",
     "autoprefixer": "^10.0.4",
     "babel-loader": "^8.2.2",
+    "cypress": "^6.0.1",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
     "postcss-flexbugs-fixes": "^5.0.2",
