@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "watch:css": "npx postcss ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
+    "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
+    "dev": "yarn watch:css && NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -17,5 +19,13 @@
     "tabWidth": 2,
     "semi": true,
     "singleQuote": true
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.14",
+    "postcss-cli": "^8.3.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^2.0.1"
   }
 }
