@@ -7,9 +7,12 @@
     "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
     "dev": "yarn watch:css && NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "lodash": "^4.17.20",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1"
@@ -21,7 +24,13 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-links": "^6.1.10",
+    "@storybook/react": "^6.1.10",
     "autoprefixer": "^10.0.4",
+    "babel-loader": "^8.2.2",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
     "postcss-flexbugs-fixes": "^5.0.2",

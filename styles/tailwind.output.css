@@ -21,8 +21,7 @@ Use a more readable tab size (opinionated).
 
 :root {
   -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
 }
 
 /**
@@ -66,25 +65,28 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 Add the correct font weight in Edge and Safari.
 */
 
+strong {
+  font-weight: bolder;
+}
+
 /**
 1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 2. Correct the odd 'em' font sizing in all browsers.
 */
 
 code {
-  font-family:
-		ui-monospace,
-		SFMono-Regular,
-		Consolas,
-		'Liberation Mono',
-		Menlo,
-		monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
 /**
 Add the correct font size in all browsers.
 */
+
+small {
+  font-size: 80%;
+}
 
 /**
 Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
@@ -110,14 +112,31 @@ Forms
 2. Remove the margin in Firefox and Safari.
 */
 
+button {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
 /**
 Remove the inheritance of text transform in Edge and Firefox.
 1. Remove the inheritance of text transform in Firefox.
 */
 
+button {
+  /* 1 */
+  text-transform: none;
+}
+
 /**
 Correct the inability to style clickable types in iOS and Safari.
 */
+
+button,
+[type='button'] {
+  -webkit-appearance: button;
+}
 
 /**
 Remove the inner border and padding in Firefox.
@@ -177,17 +196,33 @@ Add the correct display in Chrome and Safari.
  * Removes the default spacing and border for appropriate elements.
  */
 
-
 h1,
+h2,
 h3,
 p {
   margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
 }
 
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 /**
  * Tailwind custom reset styles
@@ -258,7 +293,12 @@ img {
   border-style: solid;
 }
 
+button {
+  cursor: pointer;
+}
+
 h1,
+h2,
 h3 {
   font-size: inherit;
   font-weight: inherit;
@@ -282,6 +322,12 @@ a {
  * normalize.css.
  */
 
+button {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
 /**
  * Use the configured 'mono' font family for elements that
  * are expected to be rendered with a monospace font, falling
@@ -289,9 +335,9 @@ a {
  * 'mono' font family.
  */
 
-
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
 }
 
 /**
@@ -303,7 +349,8 @@ code {
  */
 
 img,
-svg {
+svg,
+canvas {
   display: block;
   vertical-align: middle;
 }
@@ -358,23 +405,25 @@ img {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
 * {
   --tw-shadow: 0 0 #0000;
 }
 
 * {
-  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgba(59, 130, 246, 0.5);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
-}
-
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spin {
@@ -384,7 +433,8 @@ img {
 }
 
 @keyframes ping {
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
@@ -392,21 +442,20 @@ img {
 
 @keyframes pulse {
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
