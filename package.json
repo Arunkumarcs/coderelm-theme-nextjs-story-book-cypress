@@ -5,9 +5,9 @@
   "scripts": {
     "cypress:run": "npx cypress run",
     "cypress:open": "npx cypress open",
-    "watch:css": "npx postcss ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
-    "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.js -o ./styles/tailwind.output.css",
-    "dev": "yarn watch:css && NODE_OPTIONS='--inspect' next dev",
+    "watch:css": "npx postcss ./styles/tailwind.css -o ./styles/tailwind.output.css",
+    "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.config.js -o ./styles/tailwind.output.css",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",

@@ -22,7 +22,7 @@ module.exports = {
         ]
       : [
           tailwindcss(),
-          // require('autoprefixer'),
+          require('autoprefixer'),
           require('@fullhuman/postcss-purgecss')({
             content: [
               './stories/**/*.{js,ts,jsx,tsx}',
