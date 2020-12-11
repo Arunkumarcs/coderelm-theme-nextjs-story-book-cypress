@@ -5,8 +5,8 @@
   "scripts": {
     "cypress:run": "npx cypress run",
     "cypress:open": "npx cypress open",
-    "watch:css": "npx postcss ./styles/tailwind.css -o ./styles/tailwind.output.css",
-    "build:tailwind": "tailwindcss build ./styles/tailwind.css -c ./tailwind.config.js -o ./styles/tailwind.output.css",
+    "watch:css": "npx postcss ./styles/globals.css -o ./styles/globals.output.css",
+    "build:tailwind": "tailwindcss build ./styles/globals.css -c ./tailwind.config.js -o ./styles/globals.output.css",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
