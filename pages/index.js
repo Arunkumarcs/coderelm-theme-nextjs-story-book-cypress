@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Create2 Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -63,3 +63,26 @@ export default function Home() {
     </div>
   );
 }
+
+// export async function getServerSideProps() {
+//   return {
+//     props: {
+//       name: 'Home',
+//     },
+//   };
+// }
+
+// export async function getStaticPaths() {
+//   // ...
+// }
+
+// This also gets called at build time
+// export async function getStaticProps({ params }) {
+//   // params contains the post `id`.
+//   // If the route is like /posts/1, then params.id is 1
+//   const res = await fetch(`https://.../posts/${params.id}`);
+//   const post = await res.json();
+
+//   // Pass post data to the page via props
+//   return { props: { post } };
+// }

@@ -5,8 +5,6 @@
   "scripts": {
     "cypress:run": "npx cypress run",
     "cypress:open": "npx cypress open",
-    "watch:css": "npx postcss ./styles/globals.css -o ./styles/globals.output.css",
-    "build:tailwind": "tailwindcss build ./styles/globals.css -c ./tailwind.config.js -o ./styles/globals.output.css",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
@@ -15,10 +13,14 @@
     "serve-storybook": "npx http-server ./storybook-static/"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
+    "formik": "^2.2.6",
     "lodash": "^4.17.20",
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-redux": "^7.2.2",
+    "reactstrap": "^8.7.1"
   },
   "prettier": {
     "trailingComma": "es5",
