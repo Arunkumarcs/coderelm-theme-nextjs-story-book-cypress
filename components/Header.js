@@ -15,17 +15,17 @@ import {
   DropdownItem,
   NavbarText,
 } from 'reactstrap';
+import './Header.css';
 
-export const Header = (props) => {
+export const Header = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <header id="web-header">
+      <Navbar className="container" light expand="md">
         <NavbarBrand href="/">
-          <img src={Logo} height="35px" />
+          <img src={Logo} height="30px" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -33,10 +33,16 @@ export const Header = (props) => {
             <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>
-            {props.user ? (
+            <NavItem>
+              <NavLink href="/about-us">About Us</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact-us">Contact Us</NavLink>
+            </NavItem>
+            {user ? (
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Profile Image
+                  Profile Image{' '}
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>Profile</DropdownItem>
@@ -52,14 +58,22 @@ export const Header = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </header>
   );
 };
 
 Header.propTypes = {
   user: PropTypes.shape({}),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      altText: PropTypes.string,
+      caption: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 Header.defaultProps = {
   user: null,
+  items: null,
 };
